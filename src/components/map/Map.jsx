@@ -1,5 +1,6 @@
 import { YMaps, Map as YMapsMap , Placemark} from '@pbe/react-yandex-maps';
 import {useState, useEffect} from "react";
+import './Map.css';
 
 export const Map = () => {
     const [userLocation, setUserLocation] = useState({ lat: 53.9, lng: 27.5667 });
@@ -23,11 +24,14 @@ export const Map = () => {
         <>
             <YMaps>
                 <div>
-                    <YMapsMap defaultState={{
-                        center: [userLocation.lat, userLocation.lng],
-                        zoom: 9,
-                        controls: ["zoomControl", "fullscreenControl"]
-                    }} modules={["control.ZoomControl", "control.FullscreenControl"]}
+                    <YMapsMap
+                        defaultState={{
+                            center: [userLocation.lat, userLocation.lng],
+                            zoom: 9,
+                            controls: ["zoomControl", "fullscreenControl"]
+                        }}
+                        modules={["control.ZoomControl", "control.FullscreenControl"]}
+                        className="map"
                     >
                         <Placemark
                             modules={["geoObject.addon.balloon"]}
