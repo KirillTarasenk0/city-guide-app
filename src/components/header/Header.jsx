@@ -37,8 +37,10 @@ export const Header = () => {
                       </Stack>
                   </div>
               </header>
-              <main>
+              <div>
                   {searchButtonIsOpen && <SearchToolbar/>}
+              </div>
+              <main>
                   <Outlet/>
               </main>
           </div>

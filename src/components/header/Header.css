@@ -25,9 +25,3 @@
 .header__logo-container {
     margin-bottom: 20px;
 }
-.main-content {
-    margin-left: 100px;
-    padding: 20px;
-    flex: 1;
-    z-index: 0;
-}
