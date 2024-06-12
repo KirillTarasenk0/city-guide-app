@@ -5,8 +5,12 @@ import SearchIcon from '../../assets/header/search-icon.svg'
 import BookmarkIcon from '../../assets/header/bookmark-icon.svg'
 import {Link, Outlet} from "react-router-dom";
 import './Header.css';
+import {useState} from "react";
+import {SearchToolbar} from "../searchToolbar/SearchToolbar";
 
 export const Header = () => {
+    const [searchButtonIsOpen, setSearchButtonIsOpen] = useState(false);
+    const [bookmarkButtonIsOpen, setBookmarkButtonIsOpen] = useState(false);
     return (
       <>
           <div className="header__component-container">
@@ -18,16 +22,23 @@ export const Header = () => {
                           </Link>
                       </div>
                       <Stack spacing={2} direction="column">
-                          <Button className="" variant="contained">
+                          <Button
+                              variant="contained"
+                              onClick={() => setSearchButtonIsOpen(!searchButtonIsOpen)}
+                          >
                               <img src={SearchIcon} alt="Search icon"/>
                           </Button>
-                          <Button className="" variant="outlined">
+                          <Button
+                              variant="outlined"
+                              onClick={() => setBookmarkButtonIsOpen(!bookmarkButtonIsOpen)}
+                          >
                               <img src={BookmarkIcon} alt="Bookmark icon"/>
                           </Button>
                       </Stack>
                   </div>
               </header>
               <main>
+                  {searchButtonIsOpen && <SearchToolbar/>}
                   <Outlet/>
               </main>
           </div>
