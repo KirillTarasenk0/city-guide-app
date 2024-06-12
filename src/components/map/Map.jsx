@@ -10,7 +10,7 @@ export const Map = () => {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude,
                 });
-            },(error) => {
+            }, (error) => {
                 console.log(error);
             }, {
                 enableHighAccuracy: true,
