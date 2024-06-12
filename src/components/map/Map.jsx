@@ -10,6 +10,12 @@ export const Map = () => {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude,
                 });
+            },(error) => {
+                console.log(error);
+            }, {
+                enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 0
             });
         }
     }, []);
@@ -18,7 +24,7 @@ export const Map = () => {
             <YMaps>
                 <div>
                     <YMapsMap defaultState={{
-                        center: [55.75, 37.57],
+                        center: [userLocation.lat, userLocation.lng],
                         zoom: 9,
                         controls: ["zoomControl", "fullscreenControl"]
                     }} modules={["control.ZoomControl", "control.FullscreenControl"]}
