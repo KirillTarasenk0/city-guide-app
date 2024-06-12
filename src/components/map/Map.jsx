@@ -1,6 +1,18 @@
 import { YMaps, Map as YMapsMap , Placemark} from '@pbe/react-yandex-maps';
+import {useState, useEffect} from "react";
 
 export const Map = () => {
+    const [userLocation, setUserLocation] = useState({ lat: 53.9, lng: 27.5667 });
+    useEffect(() => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((position) => {
+                setUserLocation({
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude,
+                });
+            });
+        }
+    }, []);
     return (
         <>
             <YMaps>
@@ -13,7 +25,7 @@ export const Map = () => {
                     >
                         <Placemark
                             modules={["geoObject.addon.balloon"]}
-                            defaultGeometry={[55.751574, 37.573856]}
+                            defaultGeometry={[userLocation.lat, userLocation.lng]}
                             properties={{
                                 balloonContentBody:
                                     "This is balloon loaded by the Yandex.Maps API module system",
