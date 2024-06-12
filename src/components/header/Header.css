@@ -1,0 +1,29 @@
+.header__component-container {
+    display: flex;
+}
+.header {
+    width: 100px;
+    padding: 20px 30px;
+    border-right: 1px solid #a9a9a9;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: white;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+.header__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.header__logo-container {
+    margin-bottom: 20px;
+}
+main {
+    margin-left: 200px;
+    padding: 20px;
+    flex: 1;
+}
