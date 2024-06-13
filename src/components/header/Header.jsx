@@ -7,6 +7,7 @@ import {Link, Outlet} from "react-router-dom";
 import './Header.css';
 import {useState} from "react";
 import {SearchToolbar} from "../searchToolbar/SearchToolbar";
+import {BookmarkToolbar} from "../bookmarkToolbar/BookmarkToolbar";
 
 export const Header = () => {
     const [searchButtonIsOpen, setSearchButtonIsOpen] = useState(false);
@@ -24,13 +25,19 @@ export const Header = () => {
                       <Stack spacing={2} direction="column">
                           <Button
                               variant="contained"
-                              onClick={() => setSearchButtonIsOpen(!searchButtonIsOpen)}
+                              onClick={() => {
+                                  setSearchButtonIsOpen(prevState => !prevState);
+                                  setBookmarkButtonIsOpen(false);
+                              }}
                           >
                               <img src={SearchIcon} alt="Search icon"/>
                           </Button>
                           <Button
                               variant="outlined"
-                              onClick={() => setBookmarkButtonIsOpen(!bookmarkButtonIsOpen)}
+                              onClick={() => {
+                                  setBookmarkButtonIsOpen(prevState => !prevState);
+                                  setSearchButtonIsOpen(false);
+                              }}
                           >
                               <img src={BookmarkIcon} alt="Bookmark icon"/>
                           </Button>
@@ -39,6 +46,7 @@ export const Header = () => {
               </header>
               <div>
                   {searchButtonIsOpen && <SearchToolbar/>}
+                  {bookmarkButtonIsOpen && <BookmarkToolbar/>}
               </div>
               <main>
                   <Outlet/>
