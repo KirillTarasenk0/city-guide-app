@@ -1,7 +1,8 @@
-import {useNavigate, useRoutes, Navigate} from "react-router-dom";
+import {useRoutes, Navigate} from "react-router-dom";
 import {Header} from "../header/Header";
 import {Home} from "../../pages/home/Home";
 import {Registration} from "../../pages/registration/Registration";
+import {Login} from "../../pages/login/Login";
 
 export const Router = () => {
     const isRegistered = true;
@@ -9,18 +10,14 @@ export const Router = () => {
         {
             path: '/',
             element: isRegistered ? <Navigate to="/home" /> : <Registration/>,
-            /*path: '/',
-            element: <Header/>,
-            children: [
-                {
-                    path: '/',
-                    element: <Home/>,
-                },
-            ],*/
         },
         {
             path: '/registration',
             element: <Registration/>,
+        },
+        {
+            path: '/login',
+            element: <Login/>,
         },
         {
             path: '/home',

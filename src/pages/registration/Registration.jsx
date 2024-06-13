@@ -2,6 +2,7 @@ import './Registration.css';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import {Link} from "react-router-dom";
 
 export const Registration = () => {
     return (
@@ -19,8 +20,8 @@ export const Registration = () => {
                     <div>
                         <TextField
                             id="outlined-error"
-                            label="Логин"
-                            placeholder="Логин"
+                            label="Имя"
+                            placeholder="Имя"
                         />
                     </div>
                     <div>
@@ -44,6 +45,9 @@ export const Registration = () => {
                             placeholder="Повторите пароль"
                         />
                     </div>
+                    <Link className="registration__link" to={'/login'}>
+                        Есть аккаунта? Войди!
+                    </Link>
                     <Button variant="contained">Зарегистрироваться</Button>
                 </Box>
             </div>
