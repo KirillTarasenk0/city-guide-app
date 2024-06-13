@@ -9,7 +9,7 @@ import Other from '../assets/searchToolbar/other.svg';
 import Religion from '../assets/searchToolbar/religion.svg';
 import Sport from '../assets/searchToolbar/sport.svg';
 
-export const messageExamples = [
+export const sightItems = [
     {
         primary: 'Архитектура',
         person: Architecture,
