@@ -1,14 +1,14 @@
 .search__toolbar-section {
-    margin-left: 120px;
-    width: 300px;
-    padding: 20px 0;
-    border-right: 1px solid #a9a9a9;
-    height: 100vh;
+    position: absolute;
     top: 0;
-    left: 0;
+    left: 100px;
+    border-left: 1px solid #b2b0b0;
+    width: 300px;
+    padding: 20px 10px;
+    height: 100vh;
     background-color: white;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    z-index: 1000;
+    z-index: 1001;
 }
 .search__radius-field {
     width: 30%;
